@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PED Clinic - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      background: #2d89ef;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("https://hartfordhealthcaremedicalgroup.org/image%20library/454d1e19-686c-40bf-b978-1a0502016bc9/unassigned/hhcmg-pediatric-care-banner.jpg") no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      background-color: rgb(40, 106, 238);
+      opacity: 0.6;
+    }
+    .hero h2 {
+      font-size: 72px;
+      background: rgba(35, 118, 234, 0.5);
+      color: #000000;
+      padding: 15px 25px;
+      border-radius: 10px;
+    }
+
+    /* About Us */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 50px 20px;
+      gap: 20px;
+    }
+    .about img {
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .about-text h2 {
+      color: #2d89ef;
+      margin-bottom: 15px;
+    }
+
+    /* Services */
+    .services {
+      padding: 50px 20px;
+      background: #f3f9ff;
+      text-align: center;
+    }
+    .services h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #2d89ef;
+    }
+    .service-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #2d89ef;
+    }
+
+    /* Doctors */
+    .doctors {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .doctors h2 {
+      color: #2d89ef;
+      margin-bottom: 20px;
+    }
+    .doctor-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .doctor {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 220px;
+    }
+    .doctor img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .doctor h4 {
+      margin: 0;
+      color: #2d89ef;
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: 50px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .gallery h2 {
+      color: #2d89ef;
+      margin-bottom: 20px;
+    }
+    .gallery-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .gallery-box img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Contact */
+    .contact {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      color: #2d89ef;
+      margin-bottom: 15px;
+    }
+    .contact p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+    .map {
+      margin-top: 20px;
+    }
+
+    footer {
+  background: #2d89ef;
+  color: #fff;
+  padding: 50px 20px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h3, .footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-col p, .footer-col ul, .footer-col a {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffe600;
+}
+
+.social-links a {
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffe600;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.4);
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>PED Clinic</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h2>Welcome to PED Clinic – Caring for Children with Love</h2>
+  </section>
+
+  <!-- About Us -->
+  <section class="about" id="about">
+    <img src="https://img.freepik.com/free-photo/female-doctor-examining-child-with-stethoscope_23-2148890105.jpg" alt="Clinic Image">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>PED Clinic is dedicated to providing the best pediatric care for children of all ages. 
+      Our clinic offers a child-friendly environment, modern facilities, and compassionate doctors who treat every child with love and care.</p>
+      <p>We focus on preventive healthcare, vaccinations, growth monitoring, and emergency care to ensure every child’s healthy future.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-box">
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/doctor-checking-baby_23-2148890040.jpg" alt="Consultation">
+        <h3>👨‍⚕️ Doctor Consultation</h3>
+        <p>Expert pediatric consultation for your child’s health and growth.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/child-getting-vaccinated_23-2148923344.jpg" alt="Vaccination">
+        <h3>💉 Vaccinations</h3>
+        <p>Timely immunizations for protecting children from diseases.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/child-checkup_23-2148890088.jpg" alt="Health Checkup">
+        <h3>🩺 Health Checkups</h3>
+        <p>Regular health checkups to ensure your child’s well-being.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/ambulance-emergency_23-2148895567.jpg" alt="Emergency Care">
+        <h3>🚑 Emergency Care</h3>
+        <p>24/7 emergency services available for urgent child health needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors -->
+  <section class="doctors" id="doctors">
+    <h2>Our Doctors</h2>
+    <div class="doctor-list">
+      <div class="doctor">
+        <img src="https://img.freepik.com/free-photo/portrait-female-doctor_23-2148889632.jpg" alt="Doctor">
+        <h4>Dr. Priya Sharma</h4>
+        <p>Pediatric Specialist</p>
+      </div>
+      <div class="doctor">
+        <img src="https://img.freepik.com/free-photo/portrait-young-male-doctor_23-2148890102.jpg" alt="Doctor">
+        <h4>Dr. Arjun Kumar</h4>
+        <p>Child Nutritionist</p>
+      </div>
+      <div class="doctor">
+        <img src="https://img.freepik.com/free-photo/portrait-smiling-doctor_23-2148890123.jpg" alt="Doctor">
+        <h4>Dr. Neha Patel</h4>
+        <p>Neonatologist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <h2>Our Clinic Gallery</h2>
+    <div class="gallery-box">
+      <img src="https://img.freepik.com/free-photo/hospital-reception_23-2148890078.jpg" alt="Clinic Reception">
+      <img src="https://img.freepik.com/free-photo/child-patient-room_23-2148890045.jpg" alt="Child Room">
+      <img src="https://img.freepik.com/free-photo/modern-clinic-lobby_23-2148890099.jpg" alt="Clinic Lobby">
+      <img src="https://img.freepik.com/free-photo/hospital-equipment_23-2148890100.jpg" alt="Equipment">
+      <img src="https://pikaso.cdnpk.net/private/production/2346666627/render.jpg?token=exp=1780012800~hmac=c3a37f79061c27128af4aa1cc9bb679d863cbb28656f8b04df7103e6ec4b474b" alt="Equipment">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Address: 123 Health Street, Paramakudi</p>
+    <p>📞 Phone: +91 98765 43210</p>
+    <p>✉️ Email: pedclinic@example.com</p>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.143421321563!2d79.1333!3d9.5417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0123456789abcd%3A0x1234567890abcd!2sParamakudi!5e0!3m2!1sen!2sin!4v1700000000000" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-col">
+      <h3>PED Clinic</h3>
+      <p>We provide the best pediatric care with love, compassion, and modern facilities. 
+      Our mission is to ensure every child grows healthy and happy.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">🏠 Home</a></li>
+        <li><a href="#about">ℹ️ About Us</a></li>
+        <li><a href="#services">🩺 Services</a></li>
+        <li><a href="#doctors">👨‍⚕️ Doctors</a></li>
+        <li><a href="#gallery">🖼️ Gallery</a></li>
+        <li><a href="#contact">📞 Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <p>📍 123 Health Street, Paramakudi</p>
+      <p>📞 +91 98765 43210</p>
+      <p>✉️ pedclinic@example.com</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#">🌐 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+        <a href="#">💼 LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 PED Clinic. All Rights Reserved. | Designed with ❤️</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
